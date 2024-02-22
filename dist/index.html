@@ -8,12 +8,20 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+    <script language="javascript">
+      // var urlParmeter = location.script.split('?')[1];
+    </script>
   </head>
 
   <body>
     <div id="swagger-ui"></div>
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
-    <script src="./swagger-initializer.js" charset="UTF-8"> </script>
+    <script id="script" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var url = "./swagger-initializer.js?" + location.search.split(/[?&]/)[1];
+        console.log(url);
+        document.getElementById("script").src = url;
+    </script>
   </body>
 </html>
